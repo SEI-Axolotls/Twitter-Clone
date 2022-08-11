@@ -107,12 +107,13 @@ Team Communication Preferences:
 ```
 Python
 CSS
-Sass
+SASS
 HTML
 Javascipt
 React Component Names & Folders
 Trello
-Figma
 Whimiscal
 Django
+SQL
+PSQL
 ```
