@@ -1,59 +1,89 @@
 # Spitter
 
-###### Twitter-Clone
+###### Cant-Hack-it
 
 
 ----------------
 ## Starting Line-Up
 
 ### Back-End
- Mario 
+```
+1)Mario 
 
-Mitch
+2)Mitch
 
-Paul
+3)Paul
 
-James
-
+4)James
+```
 ### Front-End
-Adam *CSS
+```
+1)Adam -CSS
 
-Christine
+2)Christine -Whimiscal
 
-Eric *CSS
+3)Eric -CSS
+```
+### Docs
+```
+1) Tim
 
-## Docs
-Tim
-
-Mack
-
+2) Mack
+```
 ### Floater
-
-Denny
-
-
-## Summary of Project
+```
+1) Denny
+```
 
 
+# Summary of Project
+We created a Twitter clone with CRUD functionality. Users are able to register and then login, post comments, and have a comment thread to post more comments on post. 
 
-## Team Expectations
-GROUP PLANNING
 
-Team Goals & Values
-Functional Code
-Interactive, Attractive UI
-Thorough Communication Between Teammates
+# Team Expectations
+### Back End Gameplan
+ - hourly rotations of pair programming, everyone following along in classroom on Zoom screen; two people at a time actively coding.
 
-Team Communication Preferences
-Slack at any time; DND is on during sleep hours
-Respond within X hours.
+### For Example:
+```
+First Pair:
+Typing: Mitch
+Direction: Paul
 
-PROJECT NAME
+Second pair:
+Typing: Mario
+Direction: James
+
+Third pair:
+Typing: Paul
+Direction: Mitch
+
+Fourth pair:
+Typing: Mitch
+Direction: Mack
+```
+
+
+GROUP PLANNING:
+
+Team Goals & Values:
+   
+Functional Code  
+-Interactive,  
+-Attractive UI  
+-Thorough Communication Between Teammates
+
+Team Communication Preferences:  
+-Slack at any time;   
+-DND is on during sleep hours  
+-Respond within X hours.
+
+
 
 ## Project Schedule
 | Date| Objective| Progress|
 |-----|----------|---------|
-|20220811|Team Documents/Readme|Pending|
+|20220811|Team Documents`/Readme/Get approval|Pending|
 |20220812|        |Pending|
 |20220813|        |Pending|
 |20220814|        |Pending|
@@ -62,18 +92,19 @@ PROJECT NAME
 |20220817|        |Pending|
 
 
-### Schema
+## Schema
 ```
 
 ```
 
-### WireFrame
+## WireFrame
 
 
-### Component Hiearchy
+## Component Hiearchy
 
 
-### Technology Utilized 
+## Technology Utilized 
+```
 Python
 CSS
 Sass
@@ -84,4 +115,4 @@ Trello
 Figma
 Whimiscal
 Django
-
+```
