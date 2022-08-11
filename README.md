@@ -22,7 +22,7 @@ Christine
 
 Eric *CSS
 
-##Docs
+## Docs
 Tim
 
 Mack
@@ -30,6 +30,11 @@ Mack
 ### Floater
 
 Denny
+
+
+## Summary of Project
+
+
 
 ## Team Expectations
 GROUP PLANNING
@@ -57,8 +62,15 @@ PROJECT NAME
 |20220817|        |Pending|
 
 
+### Schema
+```
+
+```
+
+### WireFrame
 
 
+### Component Hiearchy
 
 
 ### Technology Utilized 
