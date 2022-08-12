@@ -13,12 +13,12 @@ export default function App() {
     <div className="Spitter">
       <Routes>
         <Route path="/" element={<Signin />} />
-        <Route path="/home" element={<Home />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/post" element={<Post />} />
-        <Route path="/comment" element={<CommentDetail />} />
-        <Route path="/friend" element={<Friend />} />
+        <Route path="/myprofile" element={<MyProfile />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="/posts" element={<Post />} />
+        <Route path="/posts/:post_id/comments" element={<Detail />} />
+        <Route path="/users/:user_id" element={<User />} />
     </Routes>
     </div>
   );
