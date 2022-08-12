@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import Post, User_profile, Comment
 
 
-class User_profile_Serializer(serializers.ModelSerializer):
+class User_profileSerializer(serializers.ModelSerializer):
     class Meta:
         model = User_profile
         fields = '__all__'
