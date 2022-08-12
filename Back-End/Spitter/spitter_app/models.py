@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Post(models.Model):
-    author = models.CharField(max_length=120)
+    author = models.CharField(max_length=25)
     title = models.CharField(max_length=50)
     body = models.CharField(max_length=500)
 
