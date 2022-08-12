@@ -1,4 +1,5 @@
 import Nav from '../Components/Nav';
+import SearchUser from '../Components/SearchUser'
 
 export default function User() {
   return (

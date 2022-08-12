@@ -12,6 +12,10 @@ import './App.css';
 export default function App() {
   return (
     <div className="Spitter">
+      <header className="title">
+        <h1>Spitter</h1>
+        <img src="" alt="logo" />
+      </header>
       <Routes>
         <Route path="/" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
