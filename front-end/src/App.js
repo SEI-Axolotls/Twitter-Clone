@@ -1,25 +1,28 @@
+import {useState, useEffect} from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './Screens/Home';
-import Signin from './Screens/Signin';
-import Signup from './Screens/Signup';
-import MyProfile from './Screens/MyProfile';
-import Post from './Screens/Post';
-import Detail from './Screens/Detail';
-import User from './Screens/User';
-import Nav from './Components/Nav';
+import Home from './Screens/Home/Home';
+import Signin from './Screens/Signin/Signin';
+import Signup from './Screens/Signup/Signup';
+import MyProfile from './Screens/MyProfile/MyProfile';
+import Post from './Screens/Post/Post';
+import Detail from './Screens/Detail/Detail';
+import User from './Screens/User/User';
 import './App.css';
 
 export default function App() {
+  const [user, setUser] = useState({image:"https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png"});
   return (
     <div className="Spitter">
+      
       <Routes>
-        <Route path="/" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/myprofile" element={<MyProfile />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/post" element={<Post />} />
-        <Route path="/posts/:post_id/comments" element={<Detail />} />
-        <Route path="/users/:user_id" element={<User />} />
+        <Route path="/signin" element={<Signin />} />
+        <Route path="/register" element={<Signup />} />
+
+        <Route path="/myprofile" element={<MyProfile user={user}/>} />
+        <Route path="/" element={<Home user={user}/>} />
+        <Route path="/posts" element={<Post user={user}/>} />
+        <Route path="/posts/:post_id/comments" element={<Detail user={user}/>} />
+        <Route path="/users/:user_id" element={<User user={user}/>} />
     </Routes>
     </div>
   );

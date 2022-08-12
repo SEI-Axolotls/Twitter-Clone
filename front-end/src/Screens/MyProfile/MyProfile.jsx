@@ -1,16 +1,14 @@
-import Nav from '../Components/Nav';
+import Layout from '../../Components/Layout';
 
-export default function MyProfile() {
+export default function MyProfile({user}) {
   return (
-    <div className='my-profile'>
-      <Nav />
+      <Layout user={user}>
       <div className='my-profile-container'>
         
               <h2>Username:</h2>
               <h2>Email:</h2>
               <h2>Bio:</h2>
             </div>
-         
-    </div>
+         </Layout>
   )
 }

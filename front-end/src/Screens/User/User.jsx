@@ -1,16 +1,15 @@
-import Nav from '../Components/Nav';
+import Layout from '../../Components/Layout';
 
-export default function User() {
+export default function User({ user }) {
   return (
-    <div className='user'>
-      <Nav />
+    <Layout user={user}>
+     
       <div className='user-container'>
         
               <h2>Username:</h2>
               <h2>Email:</h2>
               <h2>Bio:</h2>
             </div>
-         
-    </div>
+         </Layout>
   )
 }
