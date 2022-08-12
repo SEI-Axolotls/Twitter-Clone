@@ -1,16 +1,16 @@
-import PostComponent from '../Components/Post.jsx'
-import NavComponent from '../Components/Nav.jsx'
-import AsideComponent from '../Components/Aside.jsx'
+import PostComponent from '../Components/PostComponent.jsx'
+import Nav from '../Components/Nav.jsx'
+// import AsideComponent from '../Components/Aside.jsx'
 import './Post.css'
 
-const Post = () =>{
-    return (
+export default function Post(){
+  return (
+    <div className="post">
+      <Nav />
         <div className = "post-screen-container">
-              <NavComponent/>
-              <AsideComponent/>
-              <PostComponent/>
-        </div>
+              {/* <AsideComponent/> */}
+              <PostComponent />
+      </div>
+    </div>
     )
 }
-
-export default Post
