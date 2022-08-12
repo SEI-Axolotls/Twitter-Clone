@@ -13,7 +13,7 @@ class User_profile(models.Model):
         return self.name
 
 class Post(models.Model):
-    author = models.CharField(max_length=25)
+    user = models.ForeignKey(User_profile, on_delete=models.CASCADE)
     title = models.CharField(max_length=50)
     body = models.CharField(max_length=500)
 
@@ -22,7 +22,7 @@ class Post(models.Model):
         return self.author
 
 class Comment(models.Model):
-    author = models.CharField(max_length=25)
+    user = models.ForeignKey(User_profile, on_delete=models.CASCADE)
     body = models.CharField(max_length=255)
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='posts')
 
