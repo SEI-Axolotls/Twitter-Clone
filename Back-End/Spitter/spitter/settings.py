@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'spitter_app',
     'user_auth',
-    'rest_framework'
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
