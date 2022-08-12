@@ -6,9 +6,8 @@ export default function MyProfile() {
       <Nav />
       <div className='my-profile-container'>
         
-              <h2>Name:</h2>
+              <h2>Username:</h2>
               <h2>Email:</h2>
-              <h2>Password:</h2>
               <h2>Bio:</h2>
             </div>
          
