@@ -1,10 +1,9 @@
-from .models import User_profile, Comment, Post
-from django.shortcuts import render
-from rest_framework.response import Response
-from rest_framework.views import APIView
 from rest_framework import viewsets
-from .serializers import User_profileSerializer, Comment_Serializer, Post_Serializer, Post_Serializer
+from .models import User_profile, Comment, Post
+from rest_framework.views import APIView
+from .serializers import User_profileSerializer, Comment_Serializer, Post_Serializer
 from rest_framework import permissions
+from rest_framework.response import Response
 # Create your views here.
 
 
@@ -33,9 +32,10 @@ class AllPost_ViewSet(APIView):
             user = self.request.user
             isAuthenticated = user.is_authenticated
             if isAuthenticated:
-                content = request.data['content']
+                title = request.data['title']
+                body = request.data['body']
                 userProfile = User_profile.objects.get(user=user)
-                Post.objects.create(user=userProfile, content=content)
+                Post.objects.create(user=userProfile, title=title, body=body)
                 return Response({'message': "Post Successfully Created!!"})
             else:
                 return Response({'error': "Not Authenticated make sure you include a token"})
@@ -44,8 +44,8 @@ class AllPost_ViewSet(APIView):
 
     def get(self, request):
         try:
-            result = Post.object.all()
-            all_post = Post_Serializer(result, many=True)
+            results = Post.object.all()
+            all_post = Post_Serializer(results, many=True)
             return Response(all_post.data)
         except:
             return Response({'error': "Something went wrong"})
@@ -77,11 +77,11 @@ class Comment_ViewSet(APIView):
             user = self.request.user
             isAuthenticated = user.is_authenticated
             if isAuthenticated:
-                content = request.data['content']
+                body = request.data['body']
                 userProfile = User_profile.objects.get(user=user)
                 post = Post.objects.get(id=id)
                 Comment.objects.create(
-                    user=userProfile, content=content, post=post)
+                    user=userProfile, body=body, post=post)
                 return Response({'message': "Comment Successfully Created!!"})
             else:
                 return Response({'error': "Not Authenticated. Check token!!"})

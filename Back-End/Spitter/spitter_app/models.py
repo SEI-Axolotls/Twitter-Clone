@@ -21,7 +21,7 @@ class Post(models.Model):
     body = models.CharField(max_length=500)
 
     def __str__(self):
-        return self.author
+        return self.body
 
 
 class Comment(models.Model):
@@ -31,4 +31,4 @@ class Comment(models.Model):
         Post, on_delete=models.CASCADE, related_name='posts')
 
     def __str__(self):
-        return self.author
+        return self.body
