@@ -1,6 +1,6 @@
-import Post from '../Components/Post.jsx'
+import PostComponent from '../Components/PostComponent.jsx'
 import Nav from '../Components/Nav.jsx'
-import AsideComponent from '../Components/Aside.jsx'
+// import AsideComponent from '../Components/Aside.jsx'
 import './Post.css'
 
 export default function Post(){
@@ -9,7 +9,7 @@ export default function Post(){
       <Nav />
         <div className = "post-screen-container">
               {/* <AsideComponent/> */}
-              <Post />
+              <PostComponent />
       </div>
     </div>
     )
