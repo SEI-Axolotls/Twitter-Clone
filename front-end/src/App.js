@@ -6,6 +6,7 @@ import MyProfile from './Screens/MyProfile';
 import Post from './Screens/Post';
 import Detail from './Screens/Detail';
 import User from './Screens/User';
+import Nav from './Components/Nav';
 import './App.css';
 
 export default function App() {
@@ -16,7 +17,7 @@ export default function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/myprofile" element={<MyProfile />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/posts" element={<Post />} />
+        <Route path="/post" element={<Post />} />
         <Route path="/posts/:post_id/comments" element={<Detail />} />
         <Route path="/users/:user_id" element={<User />} />
     </Routes>
