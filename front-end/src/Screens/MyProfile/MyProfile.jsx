@@ -32,6 +32,7 @@ export default function MyProfile({ user }) {
       <div className='my-profile-container'>
         <div className="profile-img-container">
           <img className="profile-pic" src={userProfile.profile_pic_url} alt="user profile" />
+          <button>Update Profile</button>
           <div>
             <h2>Username: {userProfile.name}</h2>
             <h2>Email: {userProfile.email}</h2>
@@ -40,6 +41,10 @@ export default function MyProfile({ user }) {
         <div>
           Bio: {userProfile.bio}
         </div>
+        <div>
+          {/* map through user posts */}
+        </div>
+        
       </div>
     </Layout>
   )
