@@ -9,7 +9,7 @@ const Logout = ({setUser}) => {
     const signoutUser = async() => {
         await signOut()
         setUser(null)
-        navigate("/")
+        navigate("/signin")
     }
 
 
