@@ -8,6 +8,7 @@ import Post from './Screens/Post/Post';
 import Detail from './Screens/Detail/Detail';
 import User from './Screens/User/User';
 import './App.css';
+import Logout from './Components/Logout';
 
 export default function App() {
   const [user, setUser] = useState({image:"https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png"});
@@ -17,7 +18,7 @@ export default function App() {
       <Routes>
         <Route path="/signin" element={<Signin />} />
         <Route path="/register" element={<Signup />} />
-
+        <Route path="/logout" elemet={<Logout setUser={setUser}/>} />
         <Route path="/myprofile" element={<MyProfile user={user}/>} />
         <Route path="/" element={<Home user={user}/>} />
         <Route path="/posts" element={<Post user={user}/>} />
