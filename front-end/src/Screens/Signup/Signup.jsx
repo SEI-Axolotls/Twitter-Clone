@@ -1,89 +1,63 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+
 export default function Signup() {
-  const [password, setPassword] = useState('');
-  const [passwordConfirm, setPasswordConfirm] = useState('');
-  const [valid, setValid] = useState('');
-  const [formData, setFormData] = useState({
-    "Name": "",
-    "Email": "",
-    "Password": "",
-    "PasswordConfirm": "",
+  const [formData, setFormData]= useState({
+    "username": "",
+    "password": "",
+    "re_password": "",
+    "email":"",
   })
-
-  useEffect(() => {
-    fetch('')
-      .then(response => response.json())
-      .then(customers => {
-        setCustomers(customers);
-      })
-  }, [toggle])
-
-  const passwordInput = (event) => {
-    setPassword(event.target.value);
-  console.log(password);
-  }
-
-  const passwordConfirmInput = (event) => {
-    setPasswordConfirm(event.target.value)
-    console.log(passwordConfirm);
-    
-  }
- 
-  let handleSubmit = async (e) => {
-    e.preventDefault();
-    if (passwordConfirm === password) {
-      setValid('Valid');
-      await axios.post('', formData)
-    setToggle(prev => !prev)
-    } else {
-      setValid('Invalid');
-    }
-  }
-
-
-  let handleChange = (e) => {
-    let { name, value } = e.target;
-    setFormData(prevState => ({
-      ...prevState,
+  
+  const handleSubmit = () => {} 
+  
+  const handleChange = (e) => {
+    const {name, value} = e.target
+    setFormData((prev) => ({
+      ...prev,
       [name]: value
+
     }))
   }
+
+
   return (
-    <nav className="signup">
-      <header>Register</header>        
-      <form onSubmit={handleSubmit}>
+    <div>
+    <form onSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="Add Your Username"
-          name="Name"
-          value={formData.Name}
+          name="username"
+          value={formData.username}
           onChange={handleChange}
           />
         <input
           type="text"
           placeholder="Add Your Email"
-          name="Email"
-          value={formData.Email}
+          name="email"
+          value={formData.email}
           onChange={handleChange}
           />
         <input
           type="password"
           placeholder="Enter Your Password"
-          name="AmountSpent"
-          value={formData.Password}
+          name="password"
+          value={formData.password}
           onChange={handleChange}
         />
         <input
           type="password"
           placeholder="Confirm Your Password"
-          name="ConfirmPassword"
-          value={formData.ConfirmPassword}
+          name="re_password"
+          value={formData.re_password}
           onChange={handleChange}
         />
         <button type="submit">Submit</button>
       </form>
-      <Link to='/myprofile'><button id='my-profile-butt'>Register!</button></Link>
+    <nav className="signup">
+      <Link to='/signin'><button id='my-profile-butt'>Login!</button></Link>
     </nav>
+  </div>
   )
 }

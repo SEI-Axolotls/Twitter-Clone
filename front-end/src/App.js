@@ -12,6 +12,11 @@ import Logout from './Components/Logout';
 
 export default function App() {
   const [user, setUser] = useState({image:"https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png"});
+  
+  useEffect(() => { 
+    console.log("hello")
+  }, [])
+  
   return (
     <div className="Spitter">
       

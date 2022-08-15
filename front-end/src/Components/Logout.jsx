@@ -15,7 +15,7 @@ export default function Logout ({setUser}){
 
     useEffect(()=> {
         signoutUser()
-    },[])
+    })
 
     return  ""
 }

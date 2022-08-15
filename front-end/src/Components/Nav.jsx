@@ -26,7 +26,7 @@ export default function Nav({ user }) {
 
   return (
     <nav className="navbar">
-      {user ? <img src={user.image} /> : null}
+      {user ? <img src={user.image} alt="user profile" /> : null}
       <div>
         {alwaysOptions}
         {user ? authenticatedOptions : unauthenticatedOptions}
