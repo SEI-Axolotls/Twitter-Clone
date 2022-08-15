@@ -4,7 +4,7 @@ import Header from './Header.jsx'
 export default function Layout ({ children, user }){
   return (
     <div className="layout">
-      <Header />
+      <Header user={user} />
       <Nav user={user} />
       <div className="layout-container">
         {children}
