@@ -60,11 +60,21 @@ class OnePost_ViewSet(APIView):
         try:
             post_results = Post.objects.get(id=id)
             post = Post_Serializer(post_results)
-            comments_results = Comment.objects.filter(post=id)
+            comments_results = Comment.objects.filter(post_id=id)
             comments = Comment_Serializer(comments_results, many=True)
             return Response({'post': post.data, 'comments': comments.data})
         except:
             return Response({'error': "Something went wrong"})
+
+    # added this on 8/15; think we needed GET functionality on the comments to display them but still not working
+
+    # def getComments(self, request, id):
+    #     try:
+    #         comment_results = Comment.object.filter(post_id=id)
+    #         all_comment = Comment_Serializer(comment_results, many=True)
+    #         return Response(all_comment.data)
+    #     except:
+    #         return Response({'error': "Something went wrong"})
 
 
 class Comment_ViewSet(APIView):

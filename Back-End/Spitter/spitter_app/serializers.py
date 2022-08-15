@@ -20,7 +20,7 @@ class Post_Serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class Post_Serializer(serializers.BaseSerializer):
+class Post_Serializer(serializers.ModelSerializer):
     def to_representation(self, instance):
         return {
             "id": instance.id,
