@@ -18,7 +18,7 @@ export default function App() {
       <Routes>
         <Route path="/signin" element={<Signin />} />
         <Route path="/register" element={<Signup />} />
-        <Route path="/logout" elemet={<Logout setUser={setUser}/>} />
+        <Route path="/logout" element={<Logout setUser={setUser}/>} />
         <Route path="/myprofile" element={<MyProfile user={user}/>} />
         <Route path="/" element={<Home user={user}/>} />
         <Route path="/posts" element={<Post user={user}/>} />
