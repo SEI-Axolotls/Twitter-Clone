@@ -20,21 +20,21 @@ class Post_Serializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class Post_Serializer(serializers.BaseSerializer):
-    def to_representation(self, instance):
-        return {
-            "id": instance.id,
-            "user": instance.user.name,
-            "title": instance.title,
-            "body": instance.body,
-        }
+# class Post_Serializer(serializers.BaseSerializer):
+#     def to_representation(self, instance):
+#         return {
+#             "id": instance.id,
+#             "user": instance.user.name,
+#             "title": instance.title,
+#             "body": instance.body,
+#         }
 
 
-class Comment_Serializer(serializers.BaseSerializer):
-    def to_representation(self, instance):
-        return {
-            "id": instance.id,
-            "user": instance.user.name,
-            "body": instance.body,
-            "post": instance.post
-        }
+# class Comment_Serializer(serializers.BaseSerializer):
+#     def to_representation(self, instance):
+#         return {
+#             "id": instance.id,
+#             "user": instance.user.name,
+#             "body": instance.body,
+#             "post": instance.post
+#         }
