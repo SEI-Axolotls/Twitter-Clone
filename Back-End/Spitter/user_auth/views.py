@@ -6,8 +6,8 @@ from rest_framework.response import Response
 from .serializers import UserSerializer
 from rest_framework import permissions
 from knox.models import AuthToken
-from spitter_app.models import User_profile
-from spitter_app.serializers import User_profileSerializer
+from spitter_app.models import User_profile, Post
+from spitter_app.serializers import User_profileSerializer, Post_Serializer
 
 # Create your views here.
 
@@ -74,6 +74,9 @@ class GrabProfile(APIView):
             user = self.request.user
             profile = User_profile.objects.get(user=user)
             profile_json = User_profileSerializer(profile)
-            return Response({"profile": profile_json.data})
-        except:
+            posts = Post.objects.filter(user=profile.id)
+            posts_json = Post_Serializer(posts, many=True)
+            return Response({"profile": profile_json.data, "posts": posts_json.data})
+        except Exception as e:
+            print(e)
             return Response({"error": "No User profile found"})
