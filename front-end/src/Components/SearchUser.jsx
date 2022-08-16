@@ -1,6 +1,8 @@
 // import { Link } from 'react-router-dom';
+import React, { useState, useEffect, useRef } from "react";
 
 export default function SearchUser() {
+const inputRef = useRef(null);
 
   //event handler to search data for user_id based on username inputted into search bar
   //

@@ -28,4 +28,4 @@ urlpatterns = [
     path('', include('spitter_app.urls')),
     path('user/', include('user_auth.urls')),
     path('admin/', admin.site.urls),
-]
+    ]
