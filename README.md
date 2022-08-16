@@ -2,7 +2,6 @@
 
 ###### Cant-Hack-it
 
-
 ----------------
 ## Starting Line-Up
 
@@ -84,24 +83,49 @@ Team Communication Preferences:
 | Date| Objective| Progress|
 |-----|----------|---------|
 |20220811|Team Documents`/Readme/Get approval|Finished|
-|20220812|        |Pending|
-|20220813|        |Pending|
-|20220814|        |Pending|
-|20220815|        |Pending|
-|20220816|        |Pending|
-|20220817|        |Pending|
+|20220812|Backend model setup / React setup  |Finished|
+|20220813|  Component completion      |Finished|
+|20220814| Screens and servoces completion       |Finished|
+|20220815| Backend completion       |Finished|
+|20220816|Connection of Frontend and backend|Pending|
+|20220817| Presentation       |Pending|
 
 
 ## Schema
 ```
+class User_profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, default=4)
+    name = models.CharField(max_length=50)
+    email = models.CharField(max_length=50)
+    bio = models.CharField(max_length=150)
+    profile_pic_url = models.TextField()
 
+    def __str__(self):
+        return self.name
+
+class Post(models.Model):
+    user = models.ForeignKey(User_profile, on_delete=models.CASCADE)
+    title = models.CharField(max_length=50)
+    body = models.CharField(max_length=500)
+
+
+    def __str__(self):
+        return self.author
+
+class Comment(models.Model):
+    user = models.ForeignKey(User_profile, on_delete=models.CASCADE)
+    body = models.CharField(max_length=255)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='posts')
+
+    def __str__(self):
+        return self.author
 ```
 
 ## WireFrame
-
+![alt text](https://github.com/SEI-Axolotls/Twitter-Clone/blob/development/whimsical.png)
 
 ## Component Hiearchy
-
+![alt text](https://github.com/SEI-Axolotls/Twitter-Clone/blob/development/Getting%20Started%20Boards%402x(2).png)
 
 ## Technology Utilized 
 ```
