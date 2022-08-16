@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'spitter',
         'USER': 'spitter_admin',
         'PASSWORD': '123',
-        'HOST': 'localhost'
+        'HOST': 'localhost',
 
     }
 }
