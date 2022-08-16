@@ -1,0 +1,5 @@
+CREATE DATABASE spitter;
+
+CREATE USER spitter_admin with PASSSWORD '12345';
+
+GRANT ALL PRIVILEGES ON DATABASE ga TO spitter_admin;

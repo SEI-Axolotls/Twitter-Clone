@@ -1,6 +1,6 @@
 import Layout from '../../Components/Layout';
 import { useState, useEffect } from 'react';
-import {useParams} from 'react-router-dom';
+// import {useParams} from 'react-router-dom';
 
 export default function Detail({ user }) {
   const [post, setPost] = useState({})

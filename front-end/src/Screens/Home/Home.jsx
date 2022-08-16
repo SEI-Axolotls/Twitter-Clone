@@ -17,7 +17,7 @@ export default function Home({ user}) {
     <div className='home'>
       <h1>Latest posts below:</h1>
       {posts.map((post)=> (
-        <div>
+        <div key={post._id}>
           <h3> {post.title}</h3>
           <p>{post.body}</p>
           <Link to={`/posts/${post._id}/comments`}>
