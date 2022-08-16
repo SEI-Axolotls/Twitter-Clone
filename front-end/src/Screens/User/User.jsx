@@ -1,7 +1,7 @@
 import Detail from '../Detail/Detail'
 import Layout from '../../Components/Layout';
 import { useState, useEffect } from 'react';
-import { getUser } from '../../Services/users.js'
+import { getUser } from '../../services/users.js'
 import './User.css';
 
 

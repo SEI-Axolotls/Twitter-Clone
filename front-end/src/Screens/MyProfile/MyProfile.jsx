@@ -2,14 +2,15 @@ import Layout from '../../Components/Layout';
 import { useState, useEffect } from 'react';
 import { getUser } from '../../services/users.js'
 import './MyProfile.css';
+import Modal from '../Modal/Modal';
 
 
-export default function MyProfile({ user }) {
+export default function MyProfile({ user, setUser }) {
 const [userProfile, setUserProfile] = useState({})
-const [modalData, setModalData] = useState({
-    data: {},
-    isVisible: false
-  });
+  const [modalData, setModalData] = useState({
+    user: {},
+    isVisible: false,
+  })
 
 const fetchUserProfile = async () => { 
   const userProfileData = await getUser()
@@ -32,8 +33,8 @@ useEffect(() => {
 
   let handleClick = () => {
     setModalData({
-      data: userProfile,
-      isVisible: true,
+      user: user,
+      isVisible: true
   })
   }
 
@@ -42,8 +43,12 @@ useEffect(() => {
       <div className='my-profile-container'>
         <div className="profile-img-container">
           <img className="profile-pic" src={userProfile.profile_pic_url} alt="user profile" />
-          <button onclick={handleClick}>Update Profile</button>
-          {modalData.isVisible && <Modal />}
+          <button onClick={handleClick}>Update Profile</button>
+          {modalData.isVisible ? (
+            <Modal user={modalData.user} setUser={setUser} />
+          ) : (
+            ''
+          )}
           <div>
             <h2>Username: {userProfile.name}</h2>
             <h2>Email: {userProfile.email}</h2>

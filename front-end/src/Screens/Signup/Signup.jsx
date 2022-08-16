@@ -13,14 +13,6 @@ export default function Signup() {
         "email": "",
     })
 
-    // const passwordInput = (event) => {
-    //   setPassword(event.target.value);
-    // }
-  
-    // const passwordConfirmInput = (event) => {
-    //   setPasswordConfirm(event.target.value)
-      
-    // }
     const handleSubmit = () => { }
 
     const handleChange = (e) => {
