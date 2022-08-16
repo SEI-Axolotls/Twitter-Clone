@@ -8,7 +8,7 @@ import './User.css';
 export default function User({ user }) {
   const [userProfile, setUserProfile] = useState({})
 
-  const fetchUserProfile = async () => { 
+  const fetchUserProfile = async () => {
     const userProfileData = await getUser()
     setUserProfile(userProfileData)
   }

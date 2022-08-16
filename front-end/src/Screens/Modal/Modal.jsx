@@ -1,4 +1,4 @@
-import React, { setState } from "react";
+import React, { useState, useEffect } from "react";
 import './Modal.css';
 
 export default function Modal({ userProfile, setUserProfile, modalData, setModalData }) {
@@ -8,11 +8,24 @@ export default function Modal({ userProfile, setUserProfile, modalData, setModal
   // const [bio, setBio] = useState('');
   
 
+  // handleChange() {
+  //   setUserProfile to be equal to whatever is typed
+  // }
+  
+  // onSubmit() {
+  //   send the userProfile from the state back to the database
+  // }
+  useEffect(() => {
+    // GET request to '/user/profile' with Token in header
+    // fetchUserProfile()
+    const updateUserProfile = ()=> {
+      
+   
   let handleChange = (e) => {
     e.preventDefault()
-    setUserProfile({ value: e.target.value })
+    setModalData({ value: e.target.value })
   }
-
+}, [])
   // const handleChange = (e) => {
   //     const { name, value } = e.target
   //     setUserProfile((prev) => ({
@@ -32,16 +45,7 @@ export default function Modal({ userProfile, setUserProfile, modalData, setModal
     })
   }
 
-  // let handleSubmit = (e) => {
-  //   e.preventDefault()
-  // }
-  // handleChange() {
-  //   setUserProfile to be equal to whatever is typed
-  // }
   
-  // onSubmit() {
-  //   send the userProfile from the state back to the database
-  // }
   
 
   return (

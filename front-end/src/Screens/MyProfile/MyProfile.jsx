@@ -7,15 +7,15 @@ import Modal from '../Modal/Modal';
 
 export default function MyProfile({ user, setUser }) {
 const [userProfile, setUserProfile] = useState({})
-  const [modalData, setModalData] = useState({
-    user: {},
+const [modalData, setModalData] = useState({
+    userProfile: {},
     isVisible: false,
   })
 
-const fetchUserProfile = async () => { 
-  const userProfileData = await getUser()
-  setUserProfile(userProfileData)
-}
+  const fetchUserProfile = async () => {
+    const userProfileData = await getUser()
+    setUserProfile(userProfileData)
+  }
 
 useEffect(() => {
     // GET request to '/user/profile' with Token in header
@@ -60,7 +60,7 @@ useEffect(() => {
         <div>
           {/* map through user posts */}
         </div>
-        
+
       </div>
     </Layout>
   )
