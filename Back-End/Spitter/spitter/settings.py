@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'user_auth',
     'rest_framework',
     'knox',
-    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
