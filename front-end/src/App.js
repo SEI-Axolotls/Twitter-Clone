@@ -11,14 +11,15 @@ import './App.css';
 import Logout from './Components/Logout';
 
 export default function App() {
-  const [user, setUser] = useState({image:"https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png"});
+  const [user, setUser] = useState(null);
 
+  //{image:"https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png"}
   return (
     <div className="Spitter">
 
       <Routes>
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/register" element={<Signup />} />
+        <Route path="/signin" element={<Signin setUser={setUser}/>} />
+        <Route path="/register" element={<Signup setUser={setUser} />} />
         <Route path="/logout" element={<Logout setUser={setUser}/>} />
         <Route path="/myprofile" element={<MyProfile user={user}/>} />
         <Route path="/" element={<Home user={user}/>} />

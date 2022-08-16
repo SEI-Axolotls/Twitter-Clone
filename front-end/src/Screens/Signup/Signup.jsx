@@ -1,16 +1,24 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import SearchUser from '../../Components/Header';
+import { Link, useNavigate } from 'react-router-dom';
+import {registerUser, getUser} from '../../services/users.js';
 
-export default function Signup() {
+
+export default function Signup({setUser}) {
     const [formData, setFormData] = useState({
         "username": "",
         "password": "",
         "re_password": "",
         "email": "",
     })
+    let navigate = useNavigate()
 
-    const handleSubmit = () => { }
+    const handleSubmit = async (e) => { 
+        e.preventDefault()
+        await registerUser(formData)
+        let response = await getUser()
+        setUser(response)
+        navigate("/")
+    }
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -20,23 +28,21 @@ export default function Signup() {
         }))
     }
 
-    const [file, setFile] = useState();
-    function imgPreview(e) {
-        setFile(URL.createObjectURL(e.target.files[0]));
-    }
+    // const [file, setFile] = useState();
+    // function imgPreview(e) {
+    //     setFile(URL.createObjectURL(e.target.files[0]));
+    // }
 
     return (
         <div className="signup-container">
-            <SearchUser />
-            <nav className="signup">
-                <Link to='/signin'><button id='my-profile-butt'>Log In!</button></Link>
-            </nav>
+           
+            
             <form onSubmit={handleSubmit}>
-                <img src={file} />
+                {/* <img src={file} />
                 <input type="file" id="files" onChange={imgPreview}/>
                 <br />
                 <label for="files">Add Photo</label>
-                <br />
+                <br /> */}
                 <input
                     type="text"
                     placeholder="Add Your Email"
@@ -71,7 +77,9 @@ export default function Signup() {
                 <br />
                 <button type="submit">Submit</button>
             </form>
-
+            <nav className="signup">
+                <Link to='/signin'><button id='my-profile-butt'>Log In!</button></Link>
+            </nav>
         </div>
     )
 }
