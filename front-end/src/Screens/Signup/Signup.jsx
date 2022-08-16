@@ -17,7 +17,6 @@ export default function Signup() {
         setFormData((prev) => ({
             ...prev,
             [name]: value
-
         }))
     }
 

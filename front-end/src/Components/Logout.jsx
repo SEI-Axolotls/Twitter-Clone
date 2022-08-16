@@ -3,7 +3,7 @@ import { signOut } from "../services/users.js";
 import { useNavigate } from "react-router-dom";
 
 
-const Logout = ({setUser}) => {
+export default function Logout ({setUser}){
     let navigate = useNavigate()
 
     const signoutUser = async() => {
@@ -15,10 +15,7 @@ const Logout = ({setUser}) => {
 
     useEffect(()=> {
         signoutUser()
-    } ,[])
+    })
 
     return  ""
 }
-
-
-export default Logout

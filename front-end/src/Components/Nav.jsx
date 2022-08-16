@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom';
 
-
 export default function Nav({ user }) {
   const authenticatedOptions = (
     < >
@@ -27,7 +26,8 @@ export default function Nav({ user }) {
 
   return (
     <nav className="navbar">
-      {user ? <img src={user.image} /> : null}
+      {/* Fix image for proper user profile image */}
+      {user ? <img src={user.image} alt="user profile" /> : null} 
       <div>
         {alwaysOptions}
         {user ? authenticatedOptions : unauthenticatedOptions}
