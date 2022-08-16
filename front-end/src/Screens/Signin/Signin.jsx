@@ -1,22 +1,13 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import { loginUser, getUser } from '../../services/users';
-
-export default function Signin({setUser}) {
+import SearchUser from '../../Components/Header';
+export default function Signin() {
     const [formData, setFormData] = useState({
         "username": "",
         "password": "",
     })
 
-    let navigate = useNavigate()
-
-    const handleSubmit = async (e) => { 
-        e.preventDefault()
-        await loginUser(formData)
-        let response = await getUser()
-        setUser(response)
-        navigate("/")
-    }
+    const handleSubmit = () => { }
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -31,7 +22,7 @@ export default function Signin({setUser}) {
     return (
         <div className="signin-container">
             
-            
+            {<SearchUser/>}
             <h1>Sign in</h1>
             <h2>(Description of Spitter)</h2>
             <form onSubmit={handleSubmit}>
