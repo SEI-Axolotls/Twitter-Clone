@@ -85,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'spitter',
         'USER': 'spitter_admin',
-        'PASSWORD': '12345',
+        'PASSWORD': '123',
         'HOST': 'localhost'
 
     }

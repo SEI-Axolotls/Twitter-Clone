@@ -12,9 +12,10 @@ import Logout from './Components/Logout';
 
 export default function App() {
   const [user, setUser] = useState({image:"https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png"});
+
   return (
     <div className="Spitter">
-      
+
       <Routes>
         <Route path="/signin" element={<Signin />} />
         <Route path="/register" element={<Signup />} />
@@ -28,5 +29,3 @@ export default function App() {
     </div>
   );
 }
-
-
