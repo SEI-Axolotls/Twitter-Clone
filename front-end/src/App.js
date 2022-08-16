@@ -15,6 +15,7 @@ import {getUser} from './services/users.js';
 export default function App() {
   const [user, setUser] = useState(null);
   const [toggle, setToggle] = useState(false);
+
   //{image:"https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png"}
 
   useEffect(() => {

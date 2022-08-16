@@ -27,10 +27,6 @@ export default function Signup({setUser}) {
         }))
     }
 
-    // const [file, setFile] = useState();
-    // function imgPreview(e) {
-    //     setFile(URL.createObjectURL(e.target.files[0]));
-    // }
 
     return (
         <div className="signup-container">
