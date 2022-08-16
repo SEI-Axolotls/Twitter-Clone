@@ -1,13 +1,13 @@
 import Layout from '../../Components/Layout';
 import { useState, useEffect } from 'react';
-import { getUser } from '../../Services/users.js'
+import { getUser } from '../../services/users.js'
 import './MyProfile.css';
 
 
 export default function MyProfile({ user }) {
   const [userProfile, setUserProfile] = useState({})
 
-  const fetchUserProfile = async () => { 
+  const fetchUserProfile = async () => {
     const userProfileData = await getUser()
     setUserProfile(userProfileData)
   }
@@ -26,7 +26,7 @@ export default function MyProfile({ user }) {
     })
   }, [])
 
-  
+
   return (
     <Layout user={user}>
       <div className='my-profile-container'>
@@ -44,7 +44,7 @@ export default function MyProfile({ user }) {
         <div>
           {/* map through user posts */}
         </div>
-        
+
       </div>
     </Layout>
   )
