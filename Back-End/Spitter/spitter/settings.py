@@ -45,7 +45,6 @@ INSTALLED_APPS = [
     'user_auth',
     'rest_framework',
     'knox',
-    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -159,4 +158,4 @@ WHITENOISE_USE_FINDERS = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
+STATIC_ROOT = BASE_DIR / 'static'
