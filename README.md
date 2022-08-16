@@ -83,7 +83,7 @@ Team Communication Preferences:
 ## Project Schedule
 | Date| Objective| Progress|
 |-----|----------|---------|
-|20220811|Team Documents`/Readme/Get approval|Pending|
+|20220811|Team Documents`/Readme/Get approval|Finished|
 |20220812|        |Pending|
 |20220813|        |Pending|
 |20220814|        |Pending|
