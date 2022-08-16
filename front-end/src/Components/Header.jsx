@@ -20,7 +20,7 @@ export default function Header({ user }) {
         }
 
         return users.filter((user) => {
-            const userName = user.name.toLowerCase();
+            const userName = user.user.toLowerCase();
             return userName.includes(query);
         })
     }
