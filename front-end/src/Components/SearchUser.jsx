@@ -1,16 +1,23 @@
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+export default function SearchUser({ searchQuery, setSearchQuery }) {
 
-export default function SearchUser() {
-
-  //event handler to search data for user_id based on username inputted into search bar
-  //
-  // '/users/:user_id'
-
-  return (
-    <div className='search-user'>
-      <input type='text' placeholder='Search User'></input>
+    return (
+        <div className='search-user'>
+            {/* <input type='text' placeholder='Search User'></input> */}
+            {/* <Link to='/users/:user_id'><button id='search-butt'>Search User</button></Link> */}
             {/* <Link to=`/users/${user_id}`><button id='search-butt'>Search User</button></Link> */}
 
-      </div>
-  )
+            <form action="/" method="get">
+                <input
+                    value={searchQuery}
+                    onInput={e => setSearchQuery(e.target.value)}
+                    type="text"
+                    id="user-search"
+                    placeholder="Search Users"
+                />
+                <button type="submit">Search</button>
+            </form>
+
+        </div>
+    )
 }
