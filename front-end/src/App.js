@@ -11,7 +11,7 @@ import './App.css';
 import Logout from './Components/Logout';
 
 export default function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({image:"https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png"});
 
   //{image:"https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png"}
   return (
@@ -26,7 +26,7 @@ export default function App() {
         <Route path="/posts" element={<Post user={user}/>} />
         <Route path="/posts/:post_id/comments" element={<Detail user={user}/>} />
         <Route path="/users/:user_id" element={<User user={user}/>} />
-    </Routes>
+      </Routes>
     </div>
   );
 }
