@@ -22,6 +22,19 @@ form.register-login-form>input {
   border-radius: 5px;
 }
 
+form.register-login-form>input:hover {
+    background-color: #ebebeb;
+}
+
+form.register-login-form>input:focus {
+    outline: none;
+}
+
+form.register-login-form>input[type=submit]:hover{
+    opacity: 0.85;
+    cursor: pointer;
+}
+
 nav.signup {
   margin: 15px 0;
   display: flex;
@@ -45,12 +58,7 @@ h2 {
 
 h1{
   color: rgb(52, 129, 211, 0.8);
-  font-size: 40px;
-}
-
-button.login-button{
-    text-align: left;
-    padding: 10px;
+  font-size: 45px;
 }
 
 span{
@@ -59,6 +67,7 @@ span{
 
 h5{
     color: white;
+    font-size: 17px;
 }
 
 h1, h5{

@@ -32,7 +32,7 @@ export default function Signup({setUser}) {
         <div className="signup-container">
              <h1 class="spitter-app">Spit<span>ter</span></h1>          <h5>Connect with people around the world!</h5>
              <div class="signin-box">    
-            <h2>Sign Up</h2>
+            <h2>Register</h2>
             <form onSubmit={handleSubmit} class="register-login-form">
                 <input
                     type="text"
