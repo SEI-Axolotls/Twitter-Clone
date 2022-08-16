@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import {registerUser, getUser} from '../../services/users.js';
+import "./loginregister.css"
 
 export default function Signup({setUser}) {
     const [formData, setFormData] = useState({
@@ -27,23 +28,15 @@ export default function Signup({setUser}) {
         }))
     }
 
-    // const [file, setFile] = useState();
-    // function imgPreview(e) {
-    //     setFile(URL.createObjectURL(e.target.files[0]));
-    // }
-
     return (
         <div className="signup-container">
-            
-            <form onSubmit={handleSubmit}>
-                {/* <img src={file} />
-                <input type="file" id="files" onChange={imgPreview}/>
-                <br />
-                <label for="files">Add Photo</label> */}
-                <br />
+             <h1 class="spitter-app">Spit<span>ter</span></h1>          <h5>Connect with people around the world!</h5>
+             <div class="signin-box">    
+            <h2>Sign Up</h2>
+            <form onSubmit={handleSubmit} class="register-login-form">
                 <input
                     type="text"
-                    placeholder="Add Your Email"
+                    placeholder="Enter Email..."
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
@@ -51,7 +44,7 @@ export default function Signup({setUser}) {
                 <br />
                 <input
                     type="text"
-                    placeholder="Add Your Username"
+                    placeholder="Enter Username..."
                     name="username"
                     value={formData.username}
                     onChange={handleChange}
@@ -59,25 +52,25 @@ export default function Signup({setUser}) {
                 <br />
                 <input
                     type="password"
-                    placeholder="Enter Your Password"
+                    placeholder="Enter Password..."
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
                 />
-                <br />
                 <input
                     type="password"
-                    placeholder="Confirm Your Password"
+                    placeholder="Confirm Password..."
                     name="re_password"
                     value={formData.re_password}
                     onChange={handleChange}
                 />
-                <br />
-                <button type="submit">Submit</button>
+                <input type="submit" value="Register"/>
             </form>
             <nav className="signup">
-                <Link to='/signin'><button id='my-profile-butt'>Log In!</button></Link>
+                <div>Already have an account? <Link to='/signin' class="nav-auth">Log In!</Link>
+                </div>
             </nav>
+             </div>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { loginUser, getUser } from '../../services/users';
+import "./loginregister.css"
 
 export default function Signin({setUser}) {
     const [formData, setFormData] = useState({
@@ -23,39 +24,38 @@ export default function Signin({setUser}) {
         setFormData((prev) => ({
             ...prev,
             [name]: value
-
         }))
     }
 
 
     return (
-        <div className="signin-container">
-            
-            
-            <h1>Sign in</h1>
-            <h2>(Description of Spitter)</h2>
-            <form onSubmit={handleSubmit}>
+        <div class="signin-container">
+            <h1 class="spitter-app">Spit<span>ter</span></h1>
+            <h5>Connect with people around the world!</h5>
+        <div className="signin-box">
+            <h2>Sign in</h2>
+            <form class="register-login-form" onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    placeholder="Username"
+                    placeholder="Enter Username..."
                     name="username"
                     value={formData.username}
-                    onChange={handleChange}
-                />
-                <br></br>
+                    onChange={handleChange}/>
                 <input
                     type="password"
-                    placeholder="Password"
+                    placeholder="Enter Password..."
                     name="password"
                     value={formData.password}
                     onChange={handleChange}
                 />
-                <br></br>
-                <button type="submit">Submit</button>
+                <input 
+                    type="submit"
+                    value="Login"/>    
             </form>
             <nav className="signup">
-                <Link to='/register'><button id='my-profile-butt'>Register Here!</button></Link>
+                <div>Need an account? <Link to='/register' class="nav-auth">Register</Link></div>
             </nav>
+        </div>
         </div>
     )
 }
