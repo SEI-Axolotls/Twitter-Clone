@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { getUser, changeUserInfo } from '../../services/users.js'
 import './Modal.css';
 
-export default function Modal({ userProfile, setUserProfile, modalData, setModalData }) {
+export default function Modal({ user, setUser, setModalData }) {
   // const [image, setImage] = useState('');
   // const [name, setName] = useState('');
   // const [email, setEmail] = useState('');
@@ -15,20 +16,22 @@ export default function Modal({ userProfile, setUserProfile, modalData, setModal
   // onSubmit() {
   //   send the userProfile from the state back to the database
   // }
-  useEffect(() => {
-    // GET request to '/user/profile' with Token in header
-    // fetchUserProfile()
-    const updateUserProfile = ()=> {
-      
+ 
+  // const updateUserInfo = async (e) => { 
+  //   e.preventDefault()
+  //   await changeUserInfo(formData)
+  //   let response = await getUser()
+  //   setUser(response)
    
-  let handleChange = (e) => {
-    e.preventDefault()
-    setModalData({ value: e.target.value })
-  }
-}, [])
+      // let handleChange = (e) => {
+      //   e.preventDefault()
+      //   setModalData({ value: e.target.value })
+      // }
+    
+ 
   // const handleChange = (e) => {
   //     const { name, value } = e.target
-  //     setUserProfile((prev) => ({
+  //     setUser((prev) => ({
   //         ...prev,
   //         [name]: value
 
@@ -38,7 +41,7 @@ export default function Modal({ userProfile, setUserProfile, modalData, setModal
   //        setUserProfile(URL.createObjectURL(e.target.files[0]));
   //  }
 
-  let handleClick = (e) => {
+  let handleClick = () => {
     setModalData({
    
       isVisible: false,
@@ -49,6 +52,7 @@ export default function Modal({ userProfile, setUserProfile, modalData, setModal
   
 
   return (
+    <div className="Modal">
     <div className="Modal-container">
       
       <form >
@@ -85,8 +89,10 @@ export default function Modal({ userProfile, setUserProfile, modalData, setModal
                 />
         <br /> */}
         {/* <button type="submit">Submit</button> */}
-      </form>
-      <button onClick={handleClick}>Close</button> 
+        <button onClick={handleClick}>Close</button> 
+
+        </form>
+      </div>
     </div>
   )
 }

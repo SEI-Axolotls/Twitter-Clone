@@ -25,9 +25,9 @@ export const getUser = async () => {
 
 export const registerUser = async (userData) => {
   try {
-    const response = await api.post("/user/register", userData);
-    localStorage.setItem("knox", response["token"]); // verify
-    return response.data;
+    const response = await api.post("/user/signup", userData);
+    localStorage.setItem("knox", response.data["token"]); 
+    return response.data["token"];
   } catch (error) {
     throw error;
   }
@@ -46,8 +46,8 @@ export const changeUserInfo = async (userData) => {
 export const loginUser = async (userData) => {
   try {
     const response = await api.post("/user/login", userData);
-    localStorage.setItem("knox", response["token"]); // verify
-    return response.data;
+    localStorage.setItem("knox", response.data["token"]); 
+    return response.data["token"];
   } catch (error) {
     throw error;
   }

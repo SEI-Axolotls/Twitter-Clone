@@ -7,15 +7,10 @@ import Modal from '../Modal/Modal';
 
 export default function MyProfile({ user, setUser }) {
 const [userProfile, setUserProfile] = useState({})
-const [modalData, setModalData] = useState({
-    userProfile: {},
-    isVisible: false,
+  const [modalData, setModalData] = useState({
+    isVisible: false
   })
 
-  const fetchUserProfile = async () => {
-    const userProfileData = await getUser()
-    setUserProfile(userProfileData)
-  }
 
 useEffect(() => {
     // GET request to '/user/profile' with Token in header
@@ -33,7 +28,7 @@ useEffect(() => {
 
   let handleClick = () => {
     setModalData({
-      user: user,
+      modalData: {},
       isVisible: true
   })
   }
@@ -43,12 +38,6 @@ useEffect(() => {
       <div className='my-profile-container'>
         <div className="profile-img-container">
           <img className="profile-pic" src={userProfile.profile_pic_url} alt="user profile" />
-          <button onClick={handleClick}>Update Profile</button>
-          {modalData.isVisible ? (
-            <Modal user={modalData.user} setUser={setUser} />
-          ) : (
-            ''
-          )}
           <div>
             <h2>Username: {userProfile.name}</h2>
             <h2>Email: {userProfile.email}</h2>
@@ -60,7 +49,12 @@ useEffect(() => {
         <div>
           {/* map through user posts */}
         </div>
-
+        <button onClick={handleClick}>Update Profile</button>
+          {modalData.isVisible ? (
+            <Modal user={user} setUser={setUser} />
+          ) : (
+            ''
+          )}
       </div>
     </Layout>
   )
