@@ -1,23 +1,56 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './Post.css'
 import Layout from '../../Components/Layout';
+import {createPost} from '../../services/posts.js'
+import { useNavigate } from 'react-router-dom';
 
-export default function Post({ user }) {
-    const [post, setPost] = useState('')
+export default function Post({ user, setToggle }) {
+    const [formData, setFormData] = useState({
+        title: "",
+        body: ""
+    })
 
-    const handleSubmit = (e) => {
+    let navigate = useNavigate()
+
+    useEffect(() => {
+        if(!user){
+            navigate("/register")
+        }
+    },[])
+
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        setPost(e.target[0].value)
+        await createPost(formData)
+        setToggle(prev => !prev)
+        navigate("/")
+    }
+
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setFormData((prev) => ({
+            ...prev,
+            [name]: value
+        }))
     }
 
     return (
         <Layout user={user}>
             <div className="post-screen-container">
                 <form onSubmit={handleSubmit}>
-                    <h1>Posts</h1>
-                    <p>{post}</p>
-                    <input type="text" placeholder="Add Post"/>
-                    <br />
+                <input
+                    type="text"
+                    placeholder="Title"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleChange}
+                />
+                <input
+                    type="text"
+                    placeholder="Content"
+                    name="body"
+                    value={formData.body}
+                    onChange={handleChange}
+                />
                     <button type="submit" className="">POST</button>
                 </form>
             </div>

@@ -16,7 +16,7 @@ export const getUser = async () => {
       Authorization: token,
     };
 
-    const response = await api.get("/user/profile", { headers }); // verify
+    const response = await api.get("/user/profile", { headers }); 
     return response.data;
   } catch (error) {
     throw error;
