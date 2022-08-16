@@ -51,3 +51,20 @@ export const signOut = async () => {
     throw error;
   }
 };
+
+export const changeUserInfo = async (userData, profile_id) => {
+  try {
+    let token = await getToken();
+
+    const headers = {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: token,
+    };
+
+    const response = await api.put(`/user/profile/${profile_id}`, userData);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};

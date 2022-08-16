@@ -31,7 +31,7 @@ export default function App() {
         <Route path="/signin" element={<Signin setUser={setUser}/>} />
         <Route path="/register" element={<Signup setUser={setUser} />} />
         <Route path="/logout" element={<Logout setUser={setUser}/>} />
-        <Route path="/myprofile" element={<MyProfile user={user}/>} />
+        <Route path="/myprofile" element={<MyProfile setToggle={setToggle} user={user}/>} />
         <Route path="/" element={<Home toggle={toggle} user={user}/>} />
         <Route path="/posts" element={<Post setToggle={setToggle} user={user}/>} />
         <Route path="/posts/:post_id/comments" element={<Detail setToggle={setToggle} toggle={toggle} user={user}/>} />
