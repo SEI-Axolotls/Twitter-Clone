@@ -14,6 +14,7 @@ import {getUser} from './services/users.js';
 export default function App() {
   const [user, setUser] = useState(null);
   const [toggle, setToggle] = useState(false);
+
   //{image:"https://www.seekpng.com/png/detail/73-730482_existing-user-default-avatar.png"}
 
   useEffect(() => {
@@ -36,7 +37,7 @@ export default function App() {
         <Route path="/posts" element={<Post setToggle={setToggle} user={user}/>} />
         <Route path="/posts/:post_id/comments" element={<Detail setToggle={setToggle} toggle={toggle} user={user}/>} />
         <Route path="/users/:user_id" element={<User user={user}/>} />
-    </Routes>
+      </Routes>
     </div>
   );
 }
