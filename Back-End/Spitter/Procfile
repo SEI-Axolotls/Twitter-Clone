@@ -1,1 +1,1 @@
-web: gunicorn <Spitter>.wsgi --log-file -
+web: gunicorn <spitter-api>.wsgi --log-file -
