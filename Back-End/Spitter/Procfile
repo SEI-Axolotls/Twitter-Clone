@@ -1,1 +1,0 @@
-web: gunicorn <spitter-api>.wsgi --log-file -
