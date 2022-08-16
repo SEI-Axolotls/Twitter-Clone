@@ -40,4 +40,31 @@ export const getPosts = async () => {
       throw error;
     }
   };
+
+  export const updatePost = async (postData, postID) => {
+    try {
+      let token = await getToken();
   
+      const headers = {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+        Authorization: token,
+      };
+  
+      const response = await api.put(`/posts/${postID}`, postData, { headers } ); 
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+
+  export const deletePost = async (id) => {
+    try {
+      const response = await api.delete(`/posts/${id}`)
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
+  };
+

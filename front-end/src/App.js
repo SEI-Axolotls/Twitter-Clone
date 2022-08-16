@@ -5,6 +5,7 @@ import Signin from './Screens/Signin/Signin';
 import Signup from './Screens/Signup/Signup';
 import MyProfile from './Screens/MyProfile/MyProfile';
 import Post from './Screens/Post/Post';
+import PostEdit from './Screens/PostEdit/PostEdit';
 import Detail from './Screens/Detail/Detail';
 import User from './Screens/User/User';
 import './App.css';
@@ -32,12 +33,13 @@ export default function App() {
         <Route path="/signin" element={<Signin setUser={setUser}/>} />
         <Route path="/register" element={<Signup setUser={setUser} />} />
         <Route path="/logout" element={<Logout setUser={setUser}/>} />
-        <Route path="/myprofile" element={<MyProfile user={user}/>} />
+        <Route path="/myprofile" element={<MyProfile setToggle={setToggle} user={user}/>} />
         <Route path="/" element={<Home toggle={toggle} user={user}/>} />
         <Route path="/posts" element={<Post setToggle={setToggle} user={user}/>} />
         <Route path="/posts/:post_id/comments" element={<Detail setToggle={setToggle} toggle={toggle} user={user}/>} />
         <Route path="/users/:user_id" element={<User user={user}/>} />
-      </Routes>
+        <Route path="/posts/:post_id/edit" element={<PostEdit setToggle={setToggle} user={user}/>} />
+    </Routes>
     </div>
   );
 }

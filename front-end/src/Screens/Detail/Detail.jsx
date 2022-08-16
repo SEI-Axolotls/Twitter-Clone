@@ -51,13 +51,13 @@ export default function Detail({ user, toggle, setToggle }) {
           />
           <button type="submit">submit</button>
         </form>
-        {post.comments.length &&
+        {post.comments.length ?
           post.comments.map((comment) => (
             <div>
               <h4>{comment.body}</h4>
               <p>{comment.user}</p>
             </div>
-          ))}
+          )):null}
       </div>
     </Layout>
   );
