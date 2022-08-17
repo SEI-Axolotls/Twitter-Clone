@@ -1,7 +1,7 @@
 import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { loginUser, getUser } from '../../services/users';
-import "./loginregister.css"
+import "../Signup/loginregister.css"
 
 export default function Signin({setUser}) {
     const [formData, setFormData] = useState({
@@ -33,7 +33,7 @@ export default function Signin({setUser}) {
             <h1 class="spitter-app">Spit<span>ter</span></h1>
             <h5>Connect with people around the world!</h5>
         <div className="signin-box">
-            <h2>Sign in</h2>
+            <h2>Login</h2>
             <form class="register-login-form" onSubmit={handleSubmit}>
                 <input
                     type="text"
