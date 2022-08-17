@@ -1,13 +1,70 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+div.signin-container, div.signup-container{
+    margin: 100px auto;
+    width: 400px;
+    letter-spacing: 2px;
+    font-family: roboto, sans-serif;
+  }
+  
+  div.signin-box, div.signup-box {
+    padding: 25px;
+    background-color: rgb(52, 129, 211, 0.7);
+    box-shadow: 0px 5px 15px 10px rgb(0 0 0 / 0.2);
+    text-align: center;
+    border-radius: 10px;
+  }
+  
+  form.register-login-form>input {
+    box-sizing: border-box;
+    padding: 15px 20px;
+    width: 100%;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  nav.signup {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  h2 {
+    text-align: left;
+    color: white;
+  }
+  
+  .nav-auth {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-auth:visited {
+      color: blue;
+      text-decoration: none;
+  }
+  
+  h1{
+    color: rgb(52, 129, 211, 0.8);
+    font-size: 40px;
+  }
+  
+  button.login-button{
+      text-align: left;
+      padding: 10px;
+  }
+  
+  span{
+      color: white;
+  }
+  
+  h5{
+      color: white;
+  }
+  
+  h1, h5{
+      text-align: center;
+  }
+  
+  body {
+      background-color: #ACD0EA;
+  }

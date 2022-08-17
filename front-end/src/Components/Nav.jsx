@@ -1,4 +1,6 @@
 import { Link } from 'react-router-dom';
+import './Nav.css'
+import './Layout.css'
 
 export default function Nav({ user }) {
   const authenticatedOptions = (
@@ -27,8 +29,9 @@ export default function Nav({ user }) {
   return (
     <nav className="navbar">
       {/* Fix image for proper user profile image */}
-      {user ? <img src={user.image} alt="user profile" /> : null} 
+      {/* {user ? <img src={user.image} alt="user profile" /> : null}  */}
       <div>
+      {/* <button id="hamburger-icon">&#9776;</button> */}
         {alwaysOptions}
         {user ? authenticatedOptions : unauthenticatedOptions}
       </div>

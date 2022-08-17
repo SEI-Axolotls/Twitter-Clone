@@ -3,6 +3,7 @@ import {postsData} from './postsData.js'
 import { useState, useEffect } from 'react';
 import {Link} from 'react-router-dom';
 import { getPosts } from '../../services/posts';
+import './Home.css'
 
 export default function Home({ user, toggle}) {
   const [posts, setPosts] = useState([])
@@ -20,11 +21,11 @@ export default function Home({ user, toggle}) {
   return (
     <Layout user={user}>
     <div className='home'>
-      <h1>Latest posts below:</h1>
+      <h2>Spitter Feed</h2>
       {posts.map((post)=> (
         <div key={post.id}>
-          <h3> {post.title}</h3>
-          <p>{post.body}</p>
+          <h4>Title: {post.title}</h4>
+          <p>Post: {post.body}</p>
           <Link to={`/posts/${post.id}/comments`}>
             <button>Comments</button>
           </Link>
