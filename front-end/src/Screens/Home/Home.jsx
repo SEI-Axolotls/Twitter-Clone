@@ -23,7 +23,7 @@ export default function Home({ user, toggle}) {
     <div className='home'>
       <h2>Spitter Feed</h2>
       {posts.map((post)=> (
-        <div key={post.id}>
+        <div className='post-container' key={post.id}>
           <h4>Title: {post.title}</h4>
           <p>Post: {post.body}</p>
           <Link to={`/posts/${post.id}/comments`}>

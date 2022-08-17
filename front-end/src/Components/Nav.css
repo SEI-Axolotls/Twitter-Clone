@@ -1,14 +1,14 @@
 .navbar {
     display: flex;
-    background-color: yellow;
     position: relative;
+    width: 15vw;
 }
 
-.navbar>div {
-    border: 2px solid red;
+.navbar > div {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -17,6 +17,8 @@
 
 .navbar a {
     margin: 20px 0;
+    color: black;
+    text-decoration: none;
 }
 
 #hamburger-icon {

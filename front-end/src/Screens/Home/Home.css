@@ -1,7 +1,29 @@
 .home{
-    border: 3px solid red;
+    /* border: 3px solid red; */
     display: flex;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
+}
+
+.post-container {
+  /* border: 3px solid red; */
+  padding-left: 4vw;
+  background-color: rgb(125, 169, 208);
+  padding-bottom: 2vh;
+  width: 60vw;
+}
+
+.post-container:nth-child(2n) {
+  background-color: rgb(210, 228, 244);
+  border-top: 0.1vh solid black;
+  border-bottom: 0.1vh solid black;
+}
+
+button {
+  padding: 5px 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 5px;
 }

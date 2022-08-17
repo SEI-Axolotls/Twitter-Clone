@@ -1,3 +1,7 @@
+* {
+  /* border: 1px solid red; */
+}
+
 div.signin-container, div.signup-container{
     margin: 100px auto;
     width: 400px;
