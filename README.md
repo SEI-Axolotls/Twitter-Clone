@@ -139,16 +139,17 @@ class Comment(models.Model):
 ![alt text](https://github.com/SEI-Axolotls/Twitter-Clone/blob/development/Getting%20Started%20Boards%402x(2).png)
 
 ## Technology Utilized 
-```
-Python
-CSS
-HTML
-Javascipt
-React Component Names & Folders
-Trello
-Whimiscal
-Django
-SQL
-PSQL
-Heroku - https://spitter-api.herokuapp.com/
-```
+
+-Python
+-CSS
+-HTML
+-Javascipt
+-React Component Names & Folders
+-Trello
+-Whimiscal
+-Django
+-SQL
+-PSQL
+- [Netlify](https://axolotls-spitter.netlify.app/)
+- [Heroku](https://spitter-api.herokuapp.com/)
+
