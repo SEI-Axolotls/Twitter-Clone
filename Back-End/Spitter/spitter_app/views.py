@@ -25,6 +25,31 @@ class Post_ViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = Post_Serializer
 
+class User_Profile_ViewSet(APIView):
+    def put(self, request, id):
+        try:
+            user = self.request.user
+            isAuthenticated = user.is_authenticated
+            if isAuthenticated:
+                name = request.data['name']
+                email = request.data['email']
+                profile_pic_url = request.data['profile_pic_url']
+                bio = request.data['bio']
+                reqProfile = User_profile.objects.get(user=user)
+                logProfile = User_profile.objects.get(id=id)
+                userProfile = reqProfile.id
+                loggedProfile = logProfile.id
+                print(userProfile)
+                print(loggedProfile)
+                if loggedProfile == userProfile:
+                    User_profile.objects.update(name=name, email=email, profile_pic_url=profile_pic_url, bio=bio)
+                    return Response({'message': "Post Successfully Updated!!"})
+                else:
+                    return Response({'message': "You are not authorized to perform this action"})
+            else:
+                return Response({'error': "Not Authenticated make sure you include a token"})
+        except:
+            return Response({'error': "Error: Invalid Body"})
 
 class AllPost_ViewSet(APIView):
     permission_classes = [
