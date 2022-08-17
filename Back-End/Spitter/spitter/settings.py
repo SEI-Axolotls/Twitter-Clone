@@ -25,9 +25,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-l@nogk!cg2y#veg(%qfd5y0_o-!ht1qid2k7!j*(6rrnr&0-by'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', '.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '.herokuapp.com']
 
 
 # Application definition
@@ -89,7 +89,7 @@ DATABASES = {
         'NAME': 'spitter',
         'USER': 'spitter_admin',
         'PASSWORD': '123',
-        'HOST': 'localhost'
+        'HOST': 'localhost',
 
     }
 }
@@ -154,12 +154,12 @@ REST_FRAMEWORK = {
     ]
 }
 
+import os
+
 WHITENOISE_USE_FINDERS = True
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
-STATICFILES_DIRS = (
-    BASE_DIR, 'static'
-)
+STATICFILES_DIRS = BASE_DIR, 'static'
