@@ -5,7 +5,7 @@
 ----------------
 
 # Summary of Project
-We created a Twitter clone with CRUD functionality. Users are able to register and then login, post comments, and have a comment thread to post more comments on post. If you failed to do so at any point don't worry bout it you will get it later.
+We created a Twitter clone with CRUD functionality. Users are able to register and then login, post comments, and have a comment thread to post more comments on post. If we failed to do so at any point don't worry bout it you will get it later.
 
 ----------------
 ## Starting Line-Up
