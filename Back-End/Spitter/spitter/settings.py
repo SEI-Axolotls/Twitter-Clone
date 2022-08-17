@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-l@nogk!cg2y#veg(%qfd5y0_o-!ht1qid2k7!j*(6rrnr&0-by
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', '.herokuapp.com', 'axolotls-spitter.netlify.app']
 
 
 # Application definition
