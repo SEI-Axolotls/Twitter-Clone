@@ -3,40 +3,51 @@
 ###### Cant-Hack-it
 
 ----------------
+
+# Summary of Project
+We created a Twitter clone with CRUD functionality. Users are able to register and then login, post comments, and have a comment thread to post more comments on post. If you failed to do so at any point don't worry bout it you will get it later.
+
+----------------
 ## Starting Line-Up
+
+### Team Leaders
+
+```
+1) Chris - HackSaw Chriss Duggan
+2) Raul - Stay Cool Raul
+3) Mustafa - Mr. Great like if Mufasa survived in Lion King
+```
 
 ### Back-End
 ```
-1)Mario 
+1)Mario - Not Luigi brother but still as awesome
 
-2)Mitch
+2)Mitch - Big Money Mitch
 
-3)Paul
+3)Paul - Power Ball Paul
 
-4)James
+4)James - Bond...
 ```
 ### Front-End
 ```
-1)Adam -CSS
+1)Adam - Adventures of Adam Atom (the first freakin nucleus)
 
-2)Christine -Whimiscal
+2)Christine - Sleep when im dead Chrissy
 
-3)Eric -CSS
+3)Eric - MVP Easy E
 ```
 ### Docs
 ```
-1) Tim
+1) Tim - Tools of Titans Tim
 
-2) Mack
+2) Mack - Something like the sandwich
 ```
 ### Floater
 ```
-1) Denny
+1) Denny - Life Troller
 ```
+ We are basically the power rangers and transformers mixed but with superpowers. Outstanding. Fantastic.
 
-
-# Summary of Project
-We created a Twitter clone with CRUD functionality. Users are able to register and then login, post comments, and have a comment thread to post more comments on post. 
 
 
 # Team Expectations
@@ -87,7 +98,7 @@ Team Communication Preferences:
 |20220813|  Component completion      |Finished|
 |20220814| Screens and servoces completion       |Finished|
 |20220815| Backend completion       |Finished|
-|20220816|Connection of Frontend and backend|Pending|
+|20220816|Connection of Frontend and backend|Finished|
 |20220817| Presentation       |Pending|
 
 
@@ -129,9 +140,9 @@ class Comment(models.Model):
 
 ## Technology Utilized 
 ```
+Netlify
 Python
 CSS
-SASS
 HTML
 Javascipt
 React Component Names & Folders
@@ -140,4 +151,5 @@ Whimiscal
 Django
 SQL
 PSQL
+Heroku - https://spitter-api.herokuapp.com/
 ```
