@@ -2,19 +2,26 @@
     border:2px solid green;
     display:grid;
     grid-template-areas:
-    "n h h"
-    "n m m"
-    "n m m";
+    "n h h ."
+    "n m m ."
+    "n m m .";
 }
 
 .navbar{
-    border: 5px solid black;
+    /* border: 5px solid black; */
     grid-area: n;
     display:flex;
     flex-direction: column;
 
 }
 
+.layout-container{
+  grid-area: m;
+}
+
+.header{
+  grid-area: h;
+}
 
 #hamburger-icon {
     position: fixed;
