@@ -72,7 +72,7 @@ class OnePost_ViewSet(APIView):
     def put(self, request, id):
         try:
             user = self.request.user
-            print(user)
+            # print(user)
             isAuthenticated = user.is_authenticated
             if isAuthenticated:
                 title = request.data['title']
@@ -80,10 +80,10 @@ class OnePost_ViewSet(APIView):
                 # Grabs authenticated User Name
                 Profile = User_profile.objects.get(user=user)
                 Posts = Post.objects.get(id=id)
-                userProfile = Profile.user_id
+                userProfile = Profile.id
                 userPost = Posts.user_id
-                print(userProfile)
-                print(userPost)
+                # print(userProfile)
+                # print(userPost)
                 # userPost = Post.objects.get(id=id)
                 # print(userPost)
                 if userPost == userProfile:
@@ -99,12 +99,24 @@ class OnePost_ViewSet(APIView):
     def delete(self, request, id):
         try:
             user = self.request.user
+            print(user)
             isAuthenticated = user.is_authenticated
+            print(user.is_authenticated)
             if isAuthenticated:
+                print("i'm in here")
                 userProfile = User_profile.objects.get(user=user)
-                if userProfile == id:
-                    Post.objects.delete()
-                return Response({'message': "Post Successfully Deleted!!"})
+                print(userProfile)
+                Posts = Post.objects.get(id=id)
+                print(Posts)
+                Profile = userProfile.id
+                userPost = Posts.user_id
+                print(Profile)
+                print(userPost)
+                if Profile == userPost:
+                    Posts.delete()
+                    return Response({'message': "Post Successfully Deleted!!"})
+                else:
+                    return Response({'message': "You are not authorized to perform this action"})
             else:
                 return Response({'error': "Not Authenticated make sure you include a token"})
         except:
