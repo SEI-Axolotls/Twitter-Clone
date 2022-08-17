@@ -1,13 +1,22 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from 'react';
-import SearchUser from '../../Components/Header';
-export default function Signin() {
+import { loginUser, getUser } from '../../services/users';
+
+export default function Signin({ setUser }) {
     const [formData, setFormData] = useState({
         "username": "",
         "password": "",
     })
 
-    const handleSubmit = () => { }
+    let navigate = useNavigate()
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        await loginUser(formData)
+        let response = await getUser()
+        setUser(response)
+        navigate("/")
+    }
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -18,14 +27,13 @@ export default function Signin() {
         }))
     }
 
-
     return (
         <div className="signin-container">
-            
-            {<SearchUser/>}
-            <h1>Sign in</h1>
-            <h2>(Description of Spitter)</h2>
-            <form onSubmit={handleSubmit}>
+            <h1 class="spitter-app">Spit<span>ter</span></h1>
+            <h5>Connect with people around the world!</h5>
+            <div className="signin-box">
+            <h2>Sign in</h2>
+            <form onSubmit={handleSubmit} className="register-login-form">
                 <input
                     type="text"
                     placeholder="Username"
@@ -43,10 +51,13 @@ export default function Signin() {
                 />
                 <br></br>
                 <button type="submit">Submit</button>
+                
             </form>
             <nav className="signup">
-                <Link to='/register'><button id='my-profile-butt'>Register Here!</button></Link>
+                {/* <Link to='/register'><button id='my-profile-butt'>Register Here!</button></Link> */}
+                <div>Need an account? <Link to='/register'><a class='register-a'>Register</a></Link></div>
             </nav>
+        </div>
         </div>
     )
 }

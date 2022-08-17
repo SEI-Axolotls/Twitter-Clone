@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import SearchUser from '../../Components/Header';
+import { Link, useNavigate } from 'react-router-dom';
+import { registerUser, getUser } from '../../services/users.js';
 
-export default function Signup() {
+export default function Signup({ setUser }) {
     const [formData, setFormData] = useState({
         "username": "",
         "password": "",
@@ -10,8 +10,15 @@ export default function Signup() {
         "email": "",
     })
 
-    const handleSubmit = () => { }
+    let navigate = useNavigate()
 
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        await registerUser(formData)
+        let response = await getUser()
+        setUser(response)
+        navigate("/")
+    }
     const handleChange = (e) => {
         const { name, value } = e.target
         setFormData((prev) => ({
@@ -20,22 +27,19 @@ export default function Signup() {
         }))
     }
 
-    const [file, setFile] = useState();
-    function imgPreview(e) {
-        setFile(URL.createObjectURL(e.target.files[0]));
-    }
 
     return (
         <div className="signup-container">
-            <SearchUser />
-            <nav className="signup">
-                <Link to='/signin'><button id='my-profile-butt'>Log In!</button></Link>
-            </nav>
-            <form onSubmit={handleSubmit}>
-                <img src={file} />
+            <h1 class="spitter-app">Spit<span>ter</span></h1>
+            <h5>Connect with people around the world!</h5>
+            <div class="signin-box">
+            {/* <img src="https://i.imgur.com/f6RG6Ih.png" alt="logo" /> */}
+            <h2>Sign Up</h2>
+            <form onSubmit={handleSubmit} class="register-login-form">
+                {/* <img src={file} />
                 <input type="file" id="files" onChange={imgPreview}/>
                 <br />
-                <label for="files">Add Photo</label>
+                <label for="files">Add Photo</label> */}
                 <br />
                 <input
                     type="text"
@@ -71,7 +75,11 @@ export default function Signup() {
                 <br />
                 <button type="submit">Submit</button>
             </form>
-
+            <nav className="signup">
+                <div>Already have an account? <Link to='/signin'><a id='my-profile-butt' className="nav-auth">Log In!</a></Link>
+                </div>
+            </nav>
+        </div>
         </div>
     )
 }

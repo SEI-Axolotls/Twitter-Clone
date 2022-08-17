@@ -1,0 +1,29 @@
+.layout{
+    border:2px solid green;
+    display:grid;
+    grid-template-areas:
+    "n h h"
+    "n m m"
+    "n m m";
+}
+
+.navbar{
+    border: 5px solid black;
+    grid-area: n;
+    display:flex;
+    flex-direction: column;
+
+}
+
+
+#hamburger-icon {
+    position: fixed;
+    background-color: transparent;
+    font-size: 5vh;
+    top: 1.5vh;
+    left: 1.5vh;
+  }
+
+  #hamburger-icon:hover {
+    cursor: pointer;
+  }
