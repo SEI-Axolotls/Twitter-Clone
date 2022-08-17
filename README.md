@@ -46,7 +46,7 @@ We created a Twitter clone with CRUD functionality. Users are able to register a
 ```
 1) Denny - Life Troller
 ```
- We are basically the power rangers and transformers mixed but with superpowers. Outstanding. Fantastic.
+ We are basically the power rangers and transformers mixed but with superpowers. Outstanding. Fantastic. Code name kids next door.
 
 
 
@@ -140,7 +140,6 @@ class Comment(models.Model):
 
 ## Technology Utilized 
 ```
-Netlify
 Python
 CSS
 HTML
