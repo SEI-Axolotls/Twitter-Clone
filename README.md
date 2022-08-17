@@ -140,16 +140,17 @@ class Comment(models.Model):
 
 ## Technology Utilized 
 
--Python
--CSS
--HTML
--Javascipt
--React Component Names & Folders
--Trello
--Whimiscal
--Django
--SQL
--PSQL
+-  Python
+
+-  CSS
+-  HTML
+-  Javascipt
+-  React Component Names & Folders
+-  Trello
+-  Whimiscal
+-  Django
+-  SQL
+-  PSQL
 - [Netlify](https://axolotls-spitter.netlify.app/)
 - [Heroku](https://spitter-api.herokuapp.com/)
 
