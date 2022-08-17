@@ -1,0 +1,32 @@
+.navbar {
+    display: flex;
+    background-color: yellow;
+    position: relative;
+}
+
+.navbar>div {
+    border: 2px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.navbar a {
+    margin: 20px 0;
+}
+
+#hamburger-icon {
+    position: fixed;
+    background-color: transparent;
+    font-size: 5vh;
+    top: 1.5vh;
+    left: 1.5vh;
+}
+
+#hamburger-icon:hover {
+    cursor: pointer;
+}
