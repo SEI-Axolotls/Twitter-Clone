@@ -25,7 +25,7 @@ class Post_ViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
     serializer_class = Post_Serializer
 
-class User_Profile_ViewSet(APIView):
+class User_Profile_Update_ViewSet(APIView):
     def put(self, request, id):
         try:
             user = self.request.user
