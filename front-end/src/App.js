@@ -28,7 +28,6 @@ export default function App() {
 
   return (
     <div className="Spitter">
-
       <Routes>
         <Route path="/signin" element={<Signin setUser={setUser}/>} />
         <Route path="/register" element={<Signup setUser={setUser} />} />

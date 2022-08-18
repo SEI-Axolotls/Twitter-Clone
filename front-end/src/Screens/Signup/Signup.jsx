@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import {registerUser, getUser} from '../../services/users.js';
+import { registerUser, getUser } from '../../services/users.js';
 
-export default function Signup({setUser}) {
+export default function Signup({ setUser }) {
     const [formData, setFormData] = useState({
         "username": "",
         "password": "",
@@ -12,7 +12,7 @@ export default function Signup({setUser}) {
 
     let navigate = useNavigate()
 
-    const handleSubmit = async (e) => { 
+    const handleSubmit = async (e) => {
         e.preventDefault()
         await registerUser(formData)
         let response = await getUser()
@@ -30,8 +30,12 @@ export default function Signup({setUser}) {
 
     return (
         <div className="signup-container">
-            
-            <form onSubmit={handleSubmit}>
+            <h1 class="spitter-app">Spit<span>ter</span></h1>
+            <h5>Connect with people around the world!</h5>
+            <div class="signin-box">
+            {/* <img src="https://i.imgur.com/f6RG6Ih.png" alt="logo" /> */}
+            <h2>Sign Up</h2>
+            <form onSubmit={handleSubmit} class="register-login-form">
                 {/* <img src={file} />
                 <input type="file" id="files" onChange={imgPreview}/>
                 <br />
@@ -72,8 +76,10 @@ export default function Signup({setUser}) {
                 <button type="submit">Submit</button>
             </form>
             <nav className="signup">
-                <Link to='/signin'><button id='my-profile-butt'>Log In!</button></Link>
+                <div>Already have an account? <Link to='/signin'><a id='my-profile-butt' className="nav-auth">Log In!</a></Link>
+                </div>
             </nav>
+        </div>
         </div>
     )
 }

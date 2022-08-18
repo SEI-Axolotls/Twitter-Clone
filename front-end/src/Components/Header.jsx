@@ -1,6 +1,6 @@
 import SearchUser from './SearchUser';
 import { useState } from 'react';
-
+import './Header.css';
 export default function Header({ user }) {
     const { search } = window.location;
     const query = new URLSearchParams(search).get('user');
@@ -30,19 +30,19 @@ export default function Header({ user }) {
         <div className='header'>
             <header className="title">
                 <h1>Spitter</h1>
-                <img src="" alt="logo" />
+                <img src="https://i.imgur.com/qmtP2TU.jpg" alt="logo" />
             </header>
-            {user && <SearchUser searchQuery={searchQuery}
+            {/* {user && <SearchUser searchQuery={searchQuery}
                 setSearchQuery={setSearchQuery} />
-            }
-            <ul>
+            } */}
+            {/* <ul>
                 {filteredUsers.map((post) => (
                     <li key={post.id}> Name: {post.name}
                     <li> Username: {post.user} </li> 
                     <li>Post: {post.post}</li><br/>
                     </li>
                     ))}
-            </ul>
+            </ul> */}
 
         </div>
     )
