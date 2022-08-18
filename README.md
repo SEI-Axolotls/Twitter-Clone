@@ -139,7 +139,7 @@ class Comment(models.Model):
 ![alt text](https://github.com/SEI-Axolotls/Twitter-Clone/blob/development/Getting%20Started%20Boards%402x(2).png)
 
 ## Technology Utilized 
-```
+
 Python
 CSS
 HTML
@@ -150,5 +150,7 @@ Whimiscal
 Django
 SQL
 PSQL
-Heroku - https://spitter-api.herokuapp.com/
-```
+[Css Original Design](https://pitch.com/public/ea4fcffe-91f0-44c0-b44b-241af8d66f9f/a792d1c7-4143-4730-b6c0-1abbda1981c3)
+[Netlify](https://axolotls-spitter.netlify.app/)
+[Heroku](https://spitter-api.herokuapp.com/)
+
