@@ -1,5 +1,4 @@
 .home{
-    border: 3px solid red;
     display: flex;
     flex-direction: column;
     /* justify-content: center; */

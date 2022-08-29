@@ -5,23 +5,23 @@ import './Layout.css'
 export default function Nav({ user }) {
   const authenticatedOptions = (
     < >
-      <Link to='/myprofile'id='nav-my-profile'>My Profile</Link>
-      <Link to='/posts' id='nav-post'>Post</Link>
-      <Link to='/logout' id='nav-logout'>Logout</Link>
+      <Link to='/myprofile'id='nav-my-profile'><button class= "nav-magenta">My Profile</button></Link>
+      <Link to='/posts' id='nav-post'><button class ="nav-purple">Post</button></Link>
+      <Link to='/logout' id='nav-logout'><button class ="nav-orange">Logout</button></Link>
 
     </>
   ) 
 
   const unauthenticatedOptions = (
     <>
-      <Link to='/signin' id='nav-signin'>Sign In</Link>
-      <Link to='/register' id='nav-register'>Register</Link>
+      <Link to='/signin' id='nav-signin'><button class="nav-orange">Sign In</button></Link>
+      <Link to='/register' id='nav-register'><button class ="nav-purple">Register</button></Link>
     </>
   )
   
   const alwaysOptions = (
     <>
-          <Link to='/' id='nav-home'>Home</Link>
+          <Link to='/' id='nav-home'><button class ="nav-blue">Home </button></Link>
 
     </>
     )
