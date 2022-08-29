@@ -15,9 +15,9 @@
     width: 100%;
 }
 
-.navbar a {
+/* .navbar a {
     margin: 20px 0;
-}
+} */
 
 #hamburger-icon {
     position: fixed;
@@ -29,4 +29,49 @@
 
 #hamburger-icon:hover {
     cursor: pointer;
+}
+
+.nav-magenta{
+    text-indent: 50px;
+    color: magenta;
+  background-color: transparent;
+  display:block;
+  border-left-color: magenta;
+    width:100%;
+    height: 50px;
+    float:left
+    
+}
+.nav-purple{
+    text-indent: 50px;
+    color: purple;
+  background-color: transparent;
+  display:block;
+  border-left-color: purple;
+    width:100%;
+    height: 75px;
+    float:left
+    
+}
+.nav-blue{
+    text-indent: 50px;
+    color: blue;
+  background-color: transparent;
+  display:block;
+  border-left-color: blue;
+    width:100%;
+    height: 75px;
+    float:left
+    
+}
+.nav-orange{
+    text-indent: 50px;
+    color: orange;
+  background-color: transparent;
+  display:block;
+  border-left-color: orange;
+    width:100%;
+    height: 75px;
+    float:left
+    
 }
